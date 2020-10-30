@@ -21,5 +21,9 @@ export class ShoppingItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  removeButtonClicked(): void {
+    this.OnRemove.emit(this.shoppingItem);
+  }
+
 
 }

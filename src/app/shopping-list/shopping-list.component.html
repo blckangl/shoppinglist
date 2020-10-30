@@ -14,6 +14,6 @@
 
 
   <div class="container mt-1">
-   <app-shopping-item *ngFor="let elem of ShoppingItems" [shoppingItem]="elem" ></app-shopping-item>
+   <app-shopping-item *ngFor="let elem of ShoppingItems" [shoppingItem]="elem" (OnRemove)="removeItem($event)" ></app-shopping-item>
   </div>
 </div>

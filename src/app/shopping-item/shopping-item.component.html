@@ -4,14 +4,12 @@
       <div class="row">
         <div class="col-xs-8">
           {{shoppingItem.Name}}
-
-
         </div>
         <div class="col-xs-2 text-right">
           {{shoppingItem.Qte}}
         </div>
         <div class="col-xs-2 text-right">
-          <button class="btn btn-danger">Remove</button>
+          <button (click)="removeButtonClicked()" class="btn btn-danger">Remove</button>
         </div>
       </div>
     </div>

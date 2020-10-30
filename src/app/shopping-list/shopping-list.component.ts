@@ -33,4 +33,10 @@ export class ShoppingListComponent implements OnInit {
     this.firstItemId++;
   }
 
+  removeItem(item: Item): void {
+    console.log('log from removeItem');
+    console.log(item);
+    const index = this.ShoppingItems.findIndex(x => x.id === item.id);
+    this.ShoppingItems.splice(index, 1);
+  }
 }
