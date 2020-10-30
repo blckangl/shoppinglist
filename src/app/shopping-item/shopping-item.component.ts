@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Item} from '../shared/item';
 
 @Component({
   selector: 'app-shopping-item',
@@ -7,11 +8,18 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ShoppingItemComponent implements OnInit {
 
-  @Input() Name;
-  @Input() Qte;
-  constructor() { }
+
+  @Output() OnRemove: EventEmitter<Item> = new EventEmitter();
+
+
+  @Input() shoppingItem: Item;
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
+
 
 }

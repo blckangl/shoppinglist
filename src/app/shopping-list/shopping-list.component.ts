@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Item} from '../shared/item';
 
 @Component({
   selector: 'app-shopping-list',
@@ -7,21 +8,29 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ShoppingListComponent implements OnInit {
 
-  ShoppingItem = [];
+  ShoppingItems: Item[];
 
   productName: string;
-  qte: number;
+  qte = 0;
+
+  firstItemId = 0;
 
   constructor() {
+    this.ShoppingItems = [];
   }
 
   ngOnInit(): void {
   }
 
-  onItemAdded() {
-    this.ShoppingItem.push({Name: this.productName, Qte: this.qte});
+  onItemAdded(): void {
+    const shoppingItem = new Item();
+    shoppingItem.Name = this.productName;
+    shoppingItem.Qte = this.qte;
+    shoppingItem.id = this.firstItemId;
+    this.ShoppingItems.push(shoppingItem);
     this.productName = '';
     this.qte = 0;
+    this.firstItemId++;
   }
 
 }
